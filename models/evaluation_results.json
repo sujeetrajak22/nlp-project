@@ -1,0 +1,82 @@
+{
+  "tfidf_lr": {
+    "accuracy": 0.917632,
+    "macro_f1": 0.917476,
+    "weighted_f1": 0.917476,
+    "macro_precision": 0.91747,
+    "macro_recall": 0.917632,
+    "classification_report": {
+      "World": {
+        "precision": 0.9320021586616298,
+        "recall": 0.9089473684210526,
+        "f1-score": 0.9203304023447908,
+        "support": 1900.0
+      },
+      "Sports": {
+        "precision": 0.9553617239610056,
+        "recall": 0.98,
+        "f1-score": 0.96752403221616,
+        "support": 1900.0
+      },
+      "Business": {
+        "precision": 0.8867825171142707,
+        "recall": 0.8863157894736842,
+        "f1-score": 0.8865490918662806,
+        "support": 1900.0
+      },
+      "Sci/Tech": {
+        "precision": 0.8957345971563981,
+        "recall": 0.8952631578947369,
+        "f1-score": 0.8954988154777573,
+        "support": 1900.0
+      },
+      "accuracy": 0.9176315789473685,
+      "macro avg": {
+        "precision": 0.9174702492233261,
+        "recall": 0.9176315789473685,
+        "f1-score": 0.9174755854762471,
+        "support": 7600.0
+      },
+      "weighted avg": {
+        "precision": 0.9174702492233261,
+        "recall": 0.9176315789473685,
+        "f1-score": 0.9174755854762473,
+        "support": 7600.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        1727,
+        55,
+        73,
+        45
+      ],
+      [
+        20,
+        1862,
+        11,
+        7
+      ],
+      [
+        55,
+        15,
+        1684,
+        146
+      ],
+      [
+        51,
+        17,
+        131,
+        1701
+      ]
+    ],
+    "inference_time_ms": 0.0003,
+    "test_size": 7600,
+    "categories": [
+      "World",
+      "Sports",
+      "Business",
+      "Sci/Tech"
+    ]
+  }
+}

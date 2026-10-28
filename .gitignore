@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Model files (large binary files)
+models/tfidf_vectorizer.pkl
+models/logistic_regression.pkl
+models/transformer/
+
+# Data files
+data/raw/*.csv
+data/processed/*.csv
+data/processed/stats.json
+data/processed/examples.json
+
+# Visualizations (generated)
+visualizations/*.png
+visualizations/*.jpg
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Notebook outputs are kept for demo purposes
