@@ -73,7 +73,7 @@ async def get_dataset_stats(request: Request) -> Dict[str, Any]:
     summary="Get example news items",
     response_description="One labelled example per category.",
 )
-async def get_examples(request: Request) -> List[Dict[str, str]]:
+async def get_examples(request: Request) -> List[Dict[str, Any]]:
     """Return one representative news item for each AG News category.
 
     Examples are read from ``data/processed/examples.json`` when available;

@@ -126,7 +126,13 @@ class DatasetService:
         if self._examples_path.exists():
             try:
                 with self._examples_path.open("r", encoding="utf-8") as fh:
-                    examples: List[Dict[str, str]] = json.load(fh)
+                    raw = json.load(fh)
+                # examples.json may be a dict keyed by category name —
+                # normalise to a list so the API always returns List[Dict].
+                if isinstance(raw, dict):
+                    examples: List[Dict[str, str]] = list(raw.values())
+                else:
+                    examples = raw
                 return examples
             except (json.JSONDecodeError, OSError) as exc:
                 logger.warning(

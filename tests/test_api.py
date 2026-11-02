@@ -32,9 +32,13 @@ def anyio_backend():
 async def client():
     """Shared async HTTP client for the duration of the test session."""
     async with AsyncClient(
-        transport=ASGITransport(app=app), base_url="http://test"
+        transport=ASGITransport(app=app),
+        base_url="http://test",
+        timeout=60.0,
     ) as ac:
-        yield ac
+        # Manually trigger the lifespan so app.state is populated
+        async with app.router.lifespan_context(app):
+            yield ac
 
 
 # ---------------------------------------------------------------------------

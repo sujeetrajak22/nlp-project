@@ -133,6 +133,13 @@ class NewsClassifier:
             raise FileNotFoundError(
                 f"Transformer model directory not found: {transformer_dir}"
             )
+        # Check that the directory actually contains model weights
+        model_files = list(transformer_dir.glob("*.safetensors")) + list(transformer_dir.glob("pytorch_model.bin"))
+        if not model_files:
+            raise FileNotFoundError(
+                f"Transformer model weights not found in {transformer_dir}. "
+                "Run scripts/train_transformer.py first."
+            )
 
         logger.info("Loading DistilBERT tokeniser from %s", transformer_dir)
         self._transformer_tokenizer = DistilBertTokenizerFast.from_pretrained(
